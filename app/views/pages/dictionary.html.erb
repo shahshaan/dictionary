@@ -1,0 +1,23 @@
+<h1>Dictionary</h1>
+
+<%= form_tag(word_respeller_url) do %>
+
+	<%= text_field_tag 'submitted_word', "", :value => @word %>
+
+	<%= submit_tag 'Submit' %>
+<% end -%>
+
+
+<br>
+
+<ul>
+<% @terrible_suggested_spellings.each do |spelling| %>
+
+	<li>
+		<%= link_to spelling.text, get_definition_url(:word => "#{spelling.text}") %>
+	</li>
+
+<% end -%>
+</ul>
+
+

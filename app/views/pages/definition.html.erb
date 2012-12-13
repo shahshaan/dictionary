@@ -1,0 +1,9 @@
+<h1><%= @word %></h1>	
+
+<ul>
+	<% @definitions.each do |definition| %>
+		<li><%= definition['text'] %></li>
+	<% end %>
+</ul>
+
+<%= @definitions.count %>
